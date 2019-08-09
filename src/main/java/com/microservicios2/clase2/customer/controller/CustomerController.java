@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.microservicios2.clase2.customer.model.Customer;
+import com.microservicios2.clase2.customer.model.Notification;
 import com.microservicios2.clase2.customer.repository.CustomerRepository;
 import com.microservicios2.clase2.customer.service.AccountService;
+import com.microservicios2.clase2.customer.service.NotificationService;
 
 @RestController
 public class CustomerController {
@@ -22,8 +24,13 @@ public class CustomerController {
 	@Autowired
 	AccountService accountService;  
 	
+	@Autowired
+	NotificationService notificationService;
+	
 	@PostMapping(value = "/customer")
 	public Customer save (@RequestBody Customer customer){
+		Notification notification = new Notification("Customer is created", "admin@dineshonjava.com", "9852XXX122");
+		notificationService.sendNotification(notification);
 		return customerRepository.save(customer);
 	}
 	
