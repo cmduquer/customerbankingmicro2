@@ -29,7 +29,7 @@ public class CustomerController {
 	
 	@PostMapping(value = "/customer")
 	public Customer save (@RequestBody Customer customer){
-		Notification notification = new Notification("Customer is created", "admin@dineshonjava.com", "9852XXX122");
+		Notification notification = new Notification("Customer is created", "cmduquer@gmail.com", "9852XXX122");
 		notificationService.sendNotification(notification);
 		return customerRepository.save(customer);
 	}

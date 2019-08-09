@@ -2788,3 +2788,4 @@ INSERT INTO CUSTOMER (customerId, customerName, mobile, email, city) values (100
 	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:488) ~[spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
 	... 36 common frames omitted
 
+2019-08-09 12:43:26.228  INFO 8663 --- [Thread-24] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
